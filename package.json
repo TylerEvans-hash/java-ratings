@@ -1,0 +1,23 @@
+{
+  "name": "java-ratings",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TylerEvans-hash/java-ratings.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TylerEvans-hash/java-ratings/issues"
+  },
+  "homepage": "https://github.com/TylerEvans-hash/java-ratings#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
