@@ -1,9 +1,11 @@
 const express = require('express');
 
+const sequelize = require('./config/connection');
+const exphbs = require('express-handlebars');
+
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-const sequelize = require('./config/connection');
 // Call models folder for sequelize.sync
 const db = require('./models');
 
@@ -13,7 +15,12 @@ app.use(express.urlencoded({ extended: false }));
 
 app.use(require('./controllers/'));
 
-// Routes here
+// Set Handlebars as view engine
+app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
+app.set('view engine', 'handlebars');
+
+
+// Routes go here
 
 // get all coffee
 app.get('/api/coffee', (req, res) => {
@@ -21,6 +28,9 @@ app.get('/api/coffee', (req, res) => {
         message: 'success'
     })
 });
+
+// Renders the page
+app.get('/', (req, res) => res.render('home'))
 
 // Default response for any other request (Not Found)
 app.use((req, res) => {
