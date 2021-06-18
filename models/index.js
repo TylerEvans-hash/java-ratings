@@ -1,3 +1,4 @@
 const Coffee = require('./Coffee');
 
-module.exports = {Coffee};
+module.exports = { Coffee };
+

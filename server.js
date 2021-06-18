@@ -1,15 +1,17 @@
 const express = require('express');
-const sequelize = require('./config/connection');
 
-const PORT = process.env.PORT || 3001;
 const app = express();
+const PORT = process.env.PORT || 3001;
 
+const sequelize = require('./config/connection');
 // Call models folder for sequelize.sync
 const db = require('./models');
 
 // Express middleware
-app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+
+app.use(require('./controllers/'));
 
 // Routes here
 
