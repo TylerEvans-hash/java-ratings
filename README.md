@@ -1,5 +1,6 @@
 # java-rating
-----------------
-##Description
+## Description
 
-java-rating is a coffee centric social app
+java-rating is a coffee centric social app 
+
+## Contribution
