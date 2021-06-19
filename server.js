@@ -33,8 +33,22 @@ app.get('/api/coffee', (req, res) => {
     })
 });
 
-// Renders the page
+// START: this whole section probably needs to be moved into a router
+
+// Renders the home page
 app.get('/', (req, res) => res.render('home'))
+
+// Renders the login 
+app.get('/login', (req, res) => {
+    res.render('login');
+  });
+
+// Renders the signup
+app.get('/signup', (req, res) => {
+    res.render('signup');
+  });
+
+// END 
 
 // Default response for any other request (Not Found)
 app.use((req, res) => {
