@@ -31,6 +31,7 @@ app.get('/api/coffee', (req, res) => {
     })
 });
 
+// routes for views
 app.use(viewRoutes)
 
 
