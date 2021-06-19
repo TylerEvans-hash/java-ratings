@@ -1,24 +1,6 @@
-<!-- navigation - block element -->
-<header>
-    <h1>
-        <a href="/"> JAVA RATINGS </a>
-    </h1>
-    <br>
-    <h2>
-        Cultivating a Community of Coffee Connoisseurs
-    </h2>
-    {{!-- NOTICE:
-    I modified these buttons to be anchors.
-    I don't know how to make buttons do what anchors do. . .  yet.
-    feel free to investigate further!
-    Best I could find is you can make them look like buttons with styling--}}
-    <nav>
-        <a href="/login">login</a>
-        <br>
-        <a href="/signup">signup</a>
-    </nav>
-</header>
-<!-- end navigation -->
+{{!-- the header is located at veiws/partials/header.handlebars --}}
+{{> header}}
+
 <main>
     <!-- Site Description -->
     <section>
@@ -36,39 +18,10 @@
     </section>
     <!-- end of site description -->
 
-    <!-- Post -->
-    <section>
-        <div class="col-10 col-12 col-md-6 col-xl-3 mb-3">
-            <div class="post-card">
-                <h3 class="post-header">
-                    Post Title
-                </h3>
-                <img src="img/post.jpg" alt="user submitted photo">
-                <p>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam, facilis adipisci sed hic
-                    totam
-                    obcaecati
-                    reiciendis illum alias soluta, consequuntur fugiat aspernatur nemo vel quo eum mollitia odio
-                    explicabo.
-                    Repellendus?
-                </p>
-                <p>
-                    Posted by Username
-                </p>
-                <button class="post-btn">Thumbs Up</button>
-                <button class="post-btn">Thumbs Down</button>
-                <button class="post-btn">Comments</button>
-            </div>
-        </div>
-    </section>
-    <!-- end of Post -->
+{{!-- the post is located at views/partials/post.handlebars --}}
+    {{> post}}
 
 </main>
-<footer>
-    <i class="fa-solid fa-coffee-beans"></i>
-    <h2> 2021 Created by </h2>
-    <a href="https://github.com/EEzycade"><i class="fa fa-github" aria-hidden="true">Cade Ellsworth</i></a>
-    <a href="https://github.com/TylerEvans-hash"><i class="fa fa-github" aria-hidden="true"></i>Tyler Evans</a>
-    <a href="https://github.com/Tim-Gelety"><i class="fa fa-github" aria-hidden="true"></i>Tim Gelety</a>
-    <a href="https://github.com/natasharrison"><i class="fa fa-github" aria-hidden="true"></i>Natasha Harrison</a>
-</footer>
+
+{{!-- the footer is located at views/partials/footer.handlebrs --}}
+{{> footer}}
