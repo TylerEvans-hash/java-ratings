@@ -33,8 +33,43 @@ app.get('/api/coffee', (req, res) => {
     })
 });
 
-// Renders the page
-app.get('/', (req, res) => res.render('home'))
+// NOTICE:
+// this whole section of code should most likely be put in its own file
+// something to do with routers
+
+app.get('/', (req, res) => {
+
+    res.render('home', {
+        dev: [
+            {
+                name: 'Cade Ellsworth',
+                username: 'EEzycade',
+            },
+            {
+                name: 'Tyler Evans',
+                username: 'TylerEvans-hash',
+            },
+            {
+                name: 'Tim Gelety',
+                username: 'Tim-Gelety',
+            },
+            {
+                name: 'Natasha Harrison',
+                username: 'natasharrison',
+            }
+        ]
+    }
+    )
+});
+
+app.get('/login', (req, res) => {
+    res.render('login');
+});
+
+app.get('/signup', (req, res) => {
+    res.render('signup');
+});
+// END
 
 // Default response for any other request (Not Found)
 app.use((req, res) => {
