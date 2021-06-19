@@ -30,8 +30,19 @@ app.get('/api/coffee', (req, res) => {
     })
 });
 
-// Renders the page
+// NOTICE:
+// this whole section of code should most likely be put in its own file
+// something to do with routers
 app.get('/', (req, res) => res.render('home'))
+
+app.get('/login', (req, res) => {
+    res.render('login');
+  });
+
+app.get('/signup', (req, res) => {
+    res.render('signup');
+  });
+// END
 
 // Default response for any other request (Not Found)
 app.use((req, res) => {
