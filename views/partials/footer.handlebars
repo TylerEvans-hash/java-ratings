@@ -1,8 +1,8 @@
 <footer>
-    <i class="fa-solid fa-coffee-beans"></i>
+
     <h2> 2021 Created by </h2>
-    <a href="https://github.com/EEzycade"><i class="fa fa-github" aria-hidden="true">Cade Ellsworth</i></a>
-    <a href="https://github.com/TylerEvans-hash"><i class="fa fa-github" aria-hidden="true"></i>Tyler Evans</a>
-    <a href="https://github.com/Tim-Gelety"><i class="fa fa-github" aria-hidden="true"></i>Tim Gelety</a>
-    <a href="https://github.com/natasharrison"><i class="fa fa-github" aria-hidden="true"></i>Natasha Harrison</a>
+
+    {{#each dev}}
+    <a href="https://github.com/{{this.username}}">{{this.name}}</a>
+    {{/each}}
 </footer>
