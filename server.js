@@ -1,18 +1,21 @@
 const express = require('express');
+
 const sequelize = require('./config/connection');
 const exphbs = require('express-handlebars');
 const viewRoutes = require('./routes/view-routes');
 const path = require('path');
 
-const PORT = process.env.PORT || 3001;
 const app = express();
+const PORT = process.env.PORT || 3001;
 
 // Call models folder for sequelize.sync
 const db = require('./models');
 
 // Express middleware
-app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+
+app.use(require('./controllers/'));
 
 // middleware
 app.use(express.static(path.join(__dirname, 'public')));
