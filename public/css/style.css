@@ -19,18 +19,23 @@
 body {
   color: var(--light-accent);
   font-family: "Staatliches", sans-serif;
+  background-image: url("../img/coffee-beans.jpg");
+  background-position: right;
+  background-repeat: no-repeat;
 }
 
 /* HEADER / NAV BAR STYLES START */
 
 header {
-  padding: 50px;
+  padding: 40px;
   background-color: #f9ce00;
   display: flex;
   background-image: url("../img/hero.jpg");
-  background-size: 60%;
+  background-size: 50%;
   background-repeat: no-repeat;
   background-position: center;
+  position: sticky;
+  top: 0;
 }
 
 header h1 a {
@@ -43,7 +48,7 @@ header h1 a {
   justify-content: left;
 }
 
-.description {
+.tagline {
   color: var(--secondary-color);
   text-shadow: 2px 2px var(--light-accent);
   line-height: 80%;
@@ -79,16 +84,15 @@ a:hover {
 
 /* HEADER / NAVBAR STYLES END */
 
-/* DESCRIPTION SECTION */
-h4 {
+/* ABOUT SECTION */
+.about {
   color: var(--tertiary-color);
-  text-shadow: 2px 2px var(--light-accent);
 }
 
-p {
-  color: var(--tertiary-color);
+h4 {
+  text-shadow: 2px 2px var(--light-accent);
 }
-/* DESCRIPTION SECTION STYLES END */
+/* ABOUT SECTION STYLES END */
 
 /* POST STYLE START */
 
