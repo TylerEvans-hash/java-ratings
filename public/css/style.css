@@ -92,15 +92,22 @@ p {
 
 /* POST STYLE START */
 
-.post-card {
-  background: var(--primary-color);
-  box-shadow: 10px 10px var(--brown-accent);
+.card {
+  background: white;
+  box-shadow: 5px 5px var(--brown-accent);
   color: black;
 }
 
-.post-header {
+.card-img-top {
+  box-shadow: 2px 2px var(--secondary-color);
+}
+
+.card-title {
   color: var(--secondary-color);
   text-shadow: 2px 2px var(--light-accent);
+  background: var(--primary-color);
+  text-align: center;
+  box-shadow: 2px 2px var(--brown-accent);
 }
 
 .post-btn {
@@ -119,10 +126,6 @@ p {
   background-color: white;
   color: var(--secondary-color);
   box-shadow: 2px 2px var(--secondary-color);
-}
-
-.post-img {
-  box-shadow: 5px 5px white;
 }
 
 /* POST STYLE END */
