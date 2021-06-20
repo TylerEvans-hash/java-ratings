@@ -11,6 +11,11 @@
   padding: 0;
 }
 
+/* little tweak to bootstrap default settings also be cool to use rem instead of px for mobility sake*/
+.row {
+--bs-gutter-x: 0rem
+}
+
 body {
   color: var(--light-accent);
   font-family: "Staatliches", sans-serif;
@@ -47,17 +52,19 @@ header h1 a {
   justify-content: left;
 }
 
+
 .nav-btn {
   background-color: var(--secondary-color);
   border: none;
   border-radius: 5px 20px 5px;
   box-shadow: 2px 2px white;
   color: white;
-  padding: 15px;
+  padding: 11px;
   text-align: center;
   text-decoration: none;
   font-size: 14px;
-  margin: 20px;
+  margin: 1px;
+  float: right;
 }
 
 .nav-btn:hover {
