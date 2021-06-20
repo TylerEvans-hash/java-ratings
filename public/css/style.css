@@ -13,7 +13,7 @@
 
 /* little tweak to bootstrap default settings also be cool to use rem instead of px for mobility sake*/
 .row {
---bs-gutter-x: 0rem
+  --bs-gutter-x: 0rem;
 }
 
 body {
@@ -51,7 +51,6 @@ header h1 a {
   display: flex;
   justify-content: left;
 }
-
 
 .nav-btn {
   background-color: var(--secondary-color);
@@ -127,6 +126,41 @@ p {
 }
 
 /* POST STYLE END */
+
+/* LOGIN STYLE */
+.login-form,
+.signup-form {
+  padding: 50px;
+  background-color: #f9ce00;
+  background-image: url("../img/hero.jpg");
+  background-size: 60%;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: black;
+  text-shadow: 2px 2px var(--light-accent);
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.login-btn,
+.signup-btn {
+  background-color: var(--secondary-color);
+  border: none;
+  border-radius: 5px 20px 5px;
+  box-shadow: 2px 2px white;
+  color: white;
+  padding: 11px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.login-btn:hover {
+  background-color: white;
+  color: var(--secondary-color);
+  box-shadow: 2px 2px var(--secondary-color);
+}
+
+/* LOGIN STYLE END */
 
 /* FOOTER STYLES START */
 footer {
