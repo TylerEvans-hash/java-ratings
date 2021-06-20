@@ -2,6 +2,7 @@ const express = require('express');
 
 const sequelize = require('./config/connection');
 const exphbs = require('express-handlebars');
+const viewRoutes = require('./routes/view-routes');
 const path = require('path');
 
 const app = express();
@@ -33,43 +34,9 @@ app.get('/api/coffee', (req, res) => {
     })
 });
 
-// NOTICE:
-// this whole section of code should most likely be put in its own file
-// something to do with routers
+// routes for views
+app.use(viewRoutes)
 
-app.get('/', (req, res) => {
-
-    res.render('home', {
-        dev: [
-            {
-                name: 'Cade Ellsworth',
-                username: 'EEzycade',
-            },
-            {
-                name: 'Tyler Evans',
-                username: 'TylerEvans-hash',
-            },
-            {
-                name: 'Tim Gelety',
-                username: 'Tim-Gelety',
-            },
-            {
-                name: 'Natasha Harrison',
-                username: 'natasharrison',
-            }
-        ]
-    }
-    )
-});
-
-app.get('/login', (req, res) => {
-    res.render('login');
-});
-
-app.get('/signup', (req, res) => {
-    res.render('signup');
-});
-// END
 
 // Default response for any other request (Not Found)
 app.use((req, res) => {
