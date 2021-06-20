@@ -1,4 +1,4 @@
-const Coffee = require('./Coffee');
+const User = require('./User');
+const Post = require('./Post');
 
-module.exports = { Coffee };
-
+module.exports = { User, Post };
