@@ -16,24 +16,24 @@
                         <div class="col-md p-3">
                             {{#if user}}
                             {{#with loggedIn}}
-                            <a href="/{{buttonA}}" class="nav-btn">🗝 Login</a>
+                            <a href="/{{buttonA}}" class="nav-btn">{{textA}}</a>
                         </div>
 
                         <div class="row">
 
                             <div class="col-md p-3">
-                                <a href="/{{buttonB}}" class="nav-btn">Sign Up</a>
+                                <a href="/{{buttonB}}" class="nav-btn">{{textB}}</a>
                             </div>
                             {{/with}}
                             {{else}}
                             {{#with loggedOut}}
-                            <a href="/{{buttonA}}" class="nav-btn">🗝 Login</a>
+                            <a href="/{{buttonA}}" class="nav-btn">{{textA}}</a>
                         </div>
 
                         <div class="row">
 
                             <div class="col-md p-3">
-                                <a href="/{{buttonB}}" class="nav-btn">Sign Up</a>
+                                <a href="/{{buttonB}}" class="nav-btn">{{textB}}</a>
                             </div>
                             {{/with}}
                             {{/if}}

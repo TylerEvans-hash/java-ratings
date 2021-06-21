@@ -23,12 +23,16 @@ const data = {
     loggedOut:
     {
         buttonA: 'login',
+        textA: '🗝 Login',
         buttonB: 'signup',
+        textB: 'Sign Up',
     },
     loggedIn:
     {
         buttonA: 'logout',
+        textA: 'LOG OUT',
         buttonB: 'createPost',
+        textB: 'CREATE POST',
     },
 
     user: true,
@@ -47,5 +51,8 @@ router.get('/signup', (req, res) => {
     res.render('signup');
 });
 
+router.get('/createPost', (req, res) => {
+    res.render('createPost');
+});
 
 module.exports = router;
