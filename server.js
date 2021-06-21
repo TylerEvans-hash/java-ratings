@@ -1,8 +1,10 @@
 const express = require('express');
-
 const sequelize = require('./config/connection');
 const exphbs = require('express-handlebars');
+const viewRoutes = require('./routes/view-routes');
 const path = require('path');
+
+const routes = require('./routes');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -23,20 +25,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
 
+// routes for views
+app.use(viewRoutes)
 
-// Routes go here
-
-// get all coffee
-app.get('/api/coffee', (req, res) => {
-    return res.json({
-        message: 'success'
-    })
-});
-
-// START: this whole section probably needs to be moved into a router
-
-// Renders the home page
-app.get('/', (req, res) => res.render('home'))
+// Routes
+app.use(routes);
 
 // Renders the login 
 app.get('/login', (req, res) => {
@@ -55,6 +48,7 @@ app.use((req, res) => {
     res.status(404).end();
 });
 
+// change force to false once program is deployed
 sequelize.sync({ force: true }).then(() => {
     app.listen(PORT, () => {
         console.log(`Server running on port ${PORT}`);
