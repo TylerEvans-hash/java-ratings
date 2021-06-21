@@ -2,6 +2,7 @@ const express = require('express');
 const sequelize = require('./config/connection');
 const exphbs = require('express-handlebars');
 const viewRoutes = require('./routes/view-routes');
+const uploadRoutes = require('./routes/upload');
 const path = require('path');
 
 const routes = require('./routes');
@@ -27,9 +28,23 @@ app.set('view engine', 'handlebars');
 
 // routes for views
 app.use(viewRoutes)
+// routes for uploads
+app.use(uploadRoutes)
 
 // Routes
 app.use(routes);
+
+// Renders the login 
+app.get('/login', (req, res) => {
+    res.render('login');
+  });
+
+// Renders the signup
+app.get('/signup', (req, res) => {
+    res.render('signup');
+  });
+
+// END 
 
 // Default response for any other request (Not Found)
 app.use((req, res) => {
