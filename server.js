@@ -2,6 +2,7 @@ const express = require('express');
 const sequelize = require('./config/connection');
 const exphbs = require('express-handlebars');
 const viewRoutes = require('./routes/view-routes');
+const uploadRoutes = require('./routes/upload');
 const path = require('path');
 
 const routes = require('./routes');
@@ -27,6 +28,8 @@ app.set('view engine', 'handlebars');
 
 // routes for views
 app.use(viewRoutes)
+// routes for uploads
+app.use(uploadRoutes)
 
 // Routes
 app.use(routes);

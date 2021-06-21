@@ -11,34 +11,19 @@
 
             <div class="col-md-5 p-3">
                 <nav>
-                    <div class="row">
-
-                        <div class="col-md p-3">
+                    
+                        {{!-- look in routes/view-routes.js for the data --}}
+                        {{!-- anchors partial is in views/partials/anchor.handlebars --}}
                             {{#if user}}
                             {{#with loggedIn}}
-                            <a href="/{{buttonA}}" class="nav-btn">{{textA}}</a>
-                        </div>
-
-                        <div class="row">
-
-                            <div class="col-md p-3">
-                                <a href="/{{buttonB}}" class="nav-btn">{{textB}}</a>
-                            </div>
+                            {{> anchor}}
                             {{/with}}
                             {{else}}
                             {{#with loggedOut}}
-                            <a href="/{{buttonA}}" class="nav-btn">{{textA}}</a>
-                        </div>
-
-                        <div class="row">
-
-                            <div class="col-md p-3">
-                                <a href="/{{buttonB}}" class="nav-btn">{{textB}}</a>
-                            </div>
+                            {{> anchor}}
                             {{/with}}
                             {{/if}}
-                        </div>
-                    </div>
+                      
                 </nav>
             </div>
 
