@@ -34,8 +34,8 @@ header {
   background-size: 50%;
   background-repeat: no-repeat;
   background-position: right;
-  position: sticky;
-  top: 0;
+  /* position: sticky;
+  top: 0; */
 }
 
 header h1 a {
@@ -96,7 +96,6 @@ h4 {
 /* ABOUT SECTION STYLES END */
 
 /* POST STYLE START */
-
 .card {
   background: white;
   box-shadow: 5px 5px var(--brown-accent);
@@ -132,7 +131,6 @@ h4 {
   color: var(--secondary-color);
   box-shadow: 2px 2px var(--secondary-color);
 }
-
 /* POST STYLE END */
 
 /* LOGIN STYLE */
@@ -151,7 +149,8 @@ h4 {
 }
 
 .login-btn,
-.signup-btn {
+.signup-btn,
+.post-submit-btn {
   background-color: var(--secondary-color);
   border: none;
   border-radius: 5px 20px 5px;
@@ -162,13 +161,44 @@ h4 {
   text-decoration: none;
 }
 
-.login-btn:hover {
+.login-btn:hover,
+.post-submit-btn:hover {
   background-color: white;
   color: var(--secondary-color);
   box-shadow: 2px 2px var(--secondary-color);
 }
-
 /* LOGIN STYLE END */
+
+/* CREATE POST FORM STYLES */
+.create-post-form {
+  color: var(--secondary-color);
+  width: 55%;
+  background-color: var(--primary-color);
+  margin: 30px;
+  padding: 20px;
+  border-radius: 5px 20px 5px;
+  box-shadow: 2px 2px var(--secondary-color);
+  font-weight: bold;
+}
+
+.create-post-form h1 {
+  color: var(--secondary-color);
+  text-shadow: 2px 2px var(--light-accent);
+}
+
+input[type="text"] {
+  width: 40%;
+  padding: 10px;
+  margin: 8px;
+  box-sizing: border-box;
+  box-shadow: 2px 2px var(--secondary-color);
+}
+
+input.textbox {
+  width: 85%;
+  padding: 30px;
+}
+/* CREATE POST FORM STYLE END */
 
 /* FOOTER STYLES START */
 footer {
