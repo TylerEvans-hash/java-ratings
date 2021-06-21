@@ -98,8 +98,6 @@ h4 {
 /* POST STYLE START */
 #post-card {
   padding: 20px;
-  display: flex;
-  justify-content: center;
 }
 
 .card {
