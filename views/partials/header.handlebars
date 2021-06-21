@@ -1,23 +1,42 @@
 <header>
     <div class="container-fluid">
+
         <div class="row">
+
             <div class="col-md-7 p-3">
                 <h1>
                     <a href="/"> JAVA RATINGS </a>
                 </h1>
             </div>
+
             <div class="col-md-5 p-3">
                 <nav>
                     <div class="row">
-                        <div class="col-md p-3">
 
-                            <a href="/login" class="nav-btn">🗝 Login</a>
+                        <div class="col-md p-3">
+                            {{#if user}}
+                            {{#with loggedIn}}
+                            <a href="/{{buttonA}}" class="nav-btn">🗝 Login</a>
                         </div>
+
                         <div class="row">
 
                             <div class="col-md p-3">
-                                <a href="/signup" class="nav-btn">Sign Up</a>
+                                <a href="/{{buttonB}}" class="nav-btn">Sign Up</a>
                             </div>
+                            {{/with}}
+                            {{else}}
+                            {{#with loggedOut}}
+                            <a href="/{{buttonA}}" class="nav-btn">🗝 Login</a>
+                        </div>
+
+                        <div class="row">
+
+                            <div class="col-md p-3">
+                                <a href="/{{buttonB}}" class="nav-btn">Sign Up</a>
+                            </div>
+                            {{/with}}
+                            {{/if}}
                         </div>
                     </div>
                 </nav>
