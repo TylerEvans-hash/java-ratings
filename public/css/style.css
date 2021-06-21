@@ -96,6 +96,12 @@ h4 {
 /* ABOUT SECTION STYLES END */
 
 /* POST STYLE START */
+#post-card {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
 .card {
   background: white;
   box-shadow: 5px 5px var(--brown-accent);

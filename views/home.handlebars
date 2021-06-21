@@ -17,7 +17,16 @@
     </section>
 
 {{!-- the post is located at views/partials/post.handlebars --}}
-    {{> post}}
+    <div class="card-columns d-flex justify-content-center">
+        <div class="row">
+    
+            {{#each cardData }}
+    
+            {{> card}}
+            {{/each}}
+    
+        </div>
+    </div>
 
 </main>
 

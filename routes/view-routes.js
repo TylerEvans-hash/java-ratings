@@ -36,7 +36,21 @@ const data = {
     },
 
     user: true,
+
+    cardData: [{
+        id: 1,
+
+    },
+    { id: 2, },
+    { id: 3, },
+    { id: 4, },
+    { id: 5, },
+
+    ],
+
 }
+
+
 
 router.get('/', (req, res) => {
 
