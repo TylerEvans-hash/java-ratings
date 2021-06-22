@@ -35,7 +35,7 @@ const data = {
         textB: 'Create Post',
     },
 
-    user: true,
+    //user: true,
 
     cardData: [
         {
