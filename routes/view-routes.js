@@ -55,7 +55,7 @@ const data = {
         {
             id: 3,
             description: "Lorem, ip other words sum dolor sit amet consectetur adipisicing elit. Aliquam, facilis adipisci sed hic totam obcaecati reiciendis illum alias  soluta, consequuntur fugiat aspernatur nemo vel quo eum mollitia odio explicabo. Repellendus?",
-            title: 'Pbetty post',
+            title: 'Betty post',
             username: 'betty',
             image: 'post',
         },
