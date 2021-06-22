@@ -138,7 +138,9 @@ h4 {
 /* POST STYLE END */
 
 /* FORMS */
-.form {
+.signup-form,
+.login-form,
+.post-form {
   color: var(--secondary-color);
   width: 50%;
   background-color: var(--primary-color);
@@ -149,7 +151,7 @@ h4 {
   font-weight: bold;
 }
 
- .form h1 {
+#form h1 {
   color: var(--secondary-color);
   text-shadow: 2px 2px var(--light-accent);
 }
@@ -195,7 +197,7 @@ input.textbox {
 .home-link {
   text-decoration: none;
   color: var(--secondary-color);
-   text-shadow: 2px 2px var(--brown-accent);
+  text-shadow: 2px 2px var(--brown-accent);
   font-weight: bold;
   padding-left: 30px;
 }
