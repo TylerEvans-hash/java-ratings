@@ -26,9 +26,23 @@ app.use(require('./controllers/'));
 
 // routes for views
 app.use(viewRoutes)
+// routes for uploads
+app.use(uploadRoutes)
 
 // Routes
 app.use(routes);
+
+// Renders the login 
+app.get('/login', (req, res) => {
+    res.render('login');
+  });
+
+// Renders the signup
+app.get('/signup', (req, res) => {
+    res.render('signup');
+  });
+
+// END 
 
 // Default response for any other request (Not Found)
 app.use((req, res) => {

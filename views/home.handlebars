@@ -7,17 +7,22 @@
         <h4>
             Friends don't let friends drink a bad cup of coffee.
         </h4>
-        {{!-- <p>
-            Java Ratings is empowering Coffee Connoisseurs around the world to impart their wisdom on others within
-            the community.
-        </p> --}}
         <p>👍 Have a great cup of coffee? Tell us.</p>
         <p>👎 Is there a cup of coffee we should avoid? Please tell us.</p>
         <p>☕ Have a perfect cappuccino? Show us.</p>
     </section>
 
-{{!-- the post is located at views/partials/post.handlebars --}}
-    {{> post}}
+    {{!-- the post is located at views/partials/post.handlebars --}}
+    <div class="card-columns d-flex justify-content-center">
+        <div class="row">
+
+            {{#each cardData }}
+
+            {{> card}}
+            {{/each}}
+
+        </div>
+    </div>
 
 </main>
 
