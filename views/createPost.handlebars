@@ -2,8 +2,8 @@
 <div class="container">
   <form class="post-form" id="form">
     <h1>New Post</h1>
-    <p> Post Title: <input type="text" id="title"></p>
-    <p> Coffee Review: <input type="text" id="review" class="textbox"></p>
+    <p> Post Title: <input type="text" name="post-title" id="title"></p>
+    <p> Coffee Review: <input type="text" name="description" id="review" class="textbox"></p>
 
     <p>{{msg}}</p>
     <form action="/upload" method="POST" enctype="multipart/form-data">
@@ -21,6 +21,8 @@
     </form>
     <a href="/" class="home-link"> JAVA RATINGS ☕ </a>
 </div>
+<script src="/public/js/post.js" type="javascript"></script>
+
 
 {{!-- jquery --}}
 {{!--
