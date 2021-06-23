@@ -4,13 +4,14 @@ const router = require('express').Router();
 const multer = require('multer');
 const path = require('path');
 
+const saveFile = function (req, file, cb) {
+    cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname))
+}
 // set Storage engine
 const storage = multer.diskStorage({
     destination: './public/uploads/',
     // gives the files a unique name based on time uploaded
-    filename: function (req, file, cb) {
-        cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname))
-    }
+    filename: saveFile
 });
 
 // initialize the Upload
@@ -46,6 +47,7 @@ router.use(express.static(__dirname + '/public'));
 // Routes
 router.get('/', (req, res) => res.render('createPost'))
 
+// this goes in view-routes
 router.post('/upload', (req, res) => {
     upload(req, res, (err) => {
         if (err) {
@@ -67,6 +69,7 @@ router.post('/upload', (req, res) => {
         }
     });
 })
+// end
 
 module.exports = router;
 

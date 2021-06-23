@@ -20,6 +20,10 @@ Post.init(
             type: DataTypes.STRING,
             allowNull: true
         },
+        file: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
         authorId: {
             type: DataTypes.INTEGER,
             references: {
