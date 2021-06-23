@@ -28,7 +28,7 @@ async function signupFormHandler(event) {
     }
 }
 
-document.querySelector('.form-btn').addEventListener('click', signupFormHandler);
+document.querySelector('.login-form-btn').addEventListener('click', signupFormHandler);
 
 // const url = window.location.origin;
 // console.log(url);
