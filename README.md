@@ -21,7 +21,8 @@ Java Ratings is empowering Coffee Connoisseurs around the world to impart their 
 ## Repository
 
 [GitHub] https://github.com/TylerEvans-hash/java-ratings.git
-[Screenshot]
+[Screenshot] <img src="./public/assets/img/screenshot.JPG" alt="yellow coffee cup Java Ratings Header">
+
 [Heroku]
 
 ## Contributors
