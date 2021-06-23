@@ -19,7 +19,7 @@
 body {
   color: var(--light-accent);
   font-family: "Staatliches", sans-serif;
-  background-image: url("../img/coffee-beans.jpg");
+  background-image: url("/assets/img/coffee-beans.jpg");
   background-position: right;
   background-repeat: no-repeat;
 }
@@ -30,7 +30,7 @@ header {
   padding: 40px;
   background-color: #f9ce00;
   display: flex;
-  background-image: url("../img/hero.jpg");
+  background-image: url("/assets/img/hero.jpg");
   background-size: 50%;
   background-repeat: no-repeat;
   background-position: right;
