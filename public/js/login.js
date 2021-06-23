@@ -1,6 +1,8 @@
 async function signupFormHandler(event) {
     event.preventDefault();
 
+    console.log("hello world!");
+
     const username = document.querySelector('#username-signup').value.trim();
     const email = document.querySelector('#email-signup').value.trim();
     const password = document.querySelector('#password-signup').value.trim();
@@ -17,7 +19,7 @@ async function signupFormHandler(event) {
             }),
             headers: { 'Content-Type': 'application/json' }
         });
-s
+
         if (response.ok) {
             document.location.replace('/');
         } else {
@@ -26,7 +28,7 @@ s
     }
 }
 
-document.querySelector('.signup-form').addEventListener('submit', signupFormHandler);
+document.querySelector('.form-btn').addEventListener('click', signupFormHandler);
 
 // const url = window.location.origin;
 // console.log(url);
