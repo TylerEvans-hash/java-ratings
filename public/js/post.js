@@ -5,11 +5,12 @@ async function newFormHandler(event) {
     const title = document.querySelector('input[name="post-title"]').value;
     const description = document.querySelector('input[name="description"]').value;
     const photo = document.querySelector('input[name="image"]').value;
-    // const username - how would we grab this?
+    // const username - how would we grab this? 
+    // getting a session data if they are logged in
 
     // what is the appropriate api route we need to use?
     const response = await fetch(`/api/posts`, {
-        method: 'POST',
+        method: 'post',
         body: JSON.stringify({
             title,
             description,
@@ -23,7 +24,7 @@ async function newFormHandler(event) {
     });
 
     if (response.ok) {
-        document.location.replace('/dashboard');
+        document.location.replace('/');
     } else {
         alert(response.statusText);
     }
