@@ -24,17 +24,11 @@ const { Post } = require('../models');
 //         image: 'post',
 //     }
 
-
 router.get('/', (req, res) => {
     Post.findAll()
         .then(dbPostData => {
+            const posts = dbPostData.map(post => post.get({ plain: true }));
             const data = {
-                post: {
-                    title: dbPostData.name,
-                    description: dbPostData.description,
-                    file: dbPostData.file,
-                    username: dbPostData.authorId
-                },
                 dev: [
                     {
                         name: 'Cade Ellsworth',
@@ -54,8 +48,8 @@ router.get('/', (req, res) => {
                     }
                 ],
 
-user: req.session.loggedIn,
-                
+                user: req.session.loggedIn,
+
                 loggedOut:
                 {
                     buttonA: 'login',
@@ -71,7 +65,7 @@ user: req.session.loggedIn,
                     textB: 'Create Post',
                 }
             }
-            res.render('home', data)
+            res.render('home', {data, posts})
         })
         .catch(err => {
             console.log(err);
