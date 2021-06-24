@@ -22,7 +22,7 @@ app.use((req, res) => {
   res.status(404).end();
 });
 
-sequelize.sync({ force: false }).then(() => {
+sequelize.sync({ force: true }).then(() => {
   app.listen(PORT, () => {
     console.log(process.env.CLEARDB_DATABASE_URL || '');
     console.log(`Server running on port ${PORT}`);

@@ -7,6 +7,7 @@ const path = require('path');
 const saveFile = function (req, file, cb) {
     cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname))
 }
+
 // set Storage engine
 const storage = multer.diskStorage({
     destination: './public/uploads/',
