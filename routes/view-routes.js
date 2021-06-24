@@ -1,42 +1,40 @@
 const router = require('express').Router();
 const { Post } = require('../models');
 
-    //user: true,
+// cardData: [
+//     {
+//         id: 1,
+//         description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam, facilis adipisci sed hic totam obcaecati reiciendis illum alias  soluta, consequuntur fugiat aspernatur nemo vel quo eum mollitia odio explicabo. Repellendus?",
+//         title: 'Post Title',
+//         username: 'Username',
+//         image: 'post',
+//     },
+//     {
+//         id: 2,
+//         description: "Lorem, ipsum dolor more words sit amet consectetur adipisicing elit. Aliquam, facilis adipisci sed hic totam obcaecati reiciendis illum alias  soluta, consequuntur fugiat aspernatur nemo vel quo eum mollitia odio explicabo. Repellendus?",
+//         title: 'bob post',
+//         username: 'Bob',
+//         image: 'post',
+//     },
+//     {
+//         id: 3,
+//         description: "Lorem, ip other words sum dolor sit amet consectetur adipisicing elit. Aliquam, facilis adipisci sed hic totam obcaecati reiciendis illum alias  soluta, consequuntur fugiat aspernatur nemo vel quo eum mollitia odio explicabo. Repellendus?",
+//         title: 'Betty post',
+//         username: 'betty',
+//         image: 'post',
+//     }
 
-    // cardData: [
-    //     {
-    //         id: 1,
-    //         description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam, facilis adipisci sed hic totam obcaecati reiciendis illum alias  soluta, consequuntur fugiat aspernatur nemo vel quo eum mollitia odio explicabo. Repellendus?",
-    //         title: 'Post Title',
-    //         username: 'Username',
-    //         image: 'post',
-    //     },
-    //     {
-    //         id: 2,
-    //         description: "Lorem, ipsum dolor more words sit amet consectetur adipisicing elit. Aliquam, facilis adipisci sed hic totam obcaecati reiciendis illum alias  soluta, consequuntur fugiat aspernatur nemo vel quo eum mollitia odio explicabo. Repellendus?",
-    //         title: 'bob post',
-    //         username: 'Bob',
-    //         image: 'post',
-    //     },
-    //     {
-    //         id: 3,
-    //         description: "Lorem, ip other words sum dolor sit amet consectetur adipisicing elit. Aliquam, facilis adipisci sed hic totam obcaecati reiciendis illum alias  soluta, consequuntur fugiat aspernatur nemo vel quo eum mollitia odio explicabo. Repellendus?",
-    //         title: 'Betty post',
-    //         username: 'betty',
-    //         image: 'post',
-    //     }
- 
 
 router.get('/', (req, res) => {
     Post.findAll()
         .then(dbPostData => {
             const data = {
                 post: {
-                    title:dbPostData.name, 
+                    title: dbPostData.name,
                     description: dbPostData.description,
                     file: dbPostData.file,
-                    username: dbPostData.authorId                
-                }, 
+                    username: dbPostData.authorId
+                },
                 dev: [
                     {
                         name: 'Cade Ellsworth',
@@ -56,6 +54,8 @@ router.get('/', (req, res) => {
                     }
                 ],
 
+user: req.session.loggedIn,
+                
                 loggedOut:
                 {
                     buttonA: 'login',
@@ -71,7 +71,6 @@ router.get('/', (req, res) => {
                     textB: 'Create Post',
                 }
             }
-
             res.render('home', data)
         })
         .catch(err => {
@@ -81,6 +80,10 @@ router.get('/', (req, res) => {
 });
 
 router.get('/login', (req, res) => {
+    if (req.session.loggedIn) {
+        res.redirect("/")
+        return;
+    }
     res.render('login');
 });
 
