@@ -14,12 +14,12 @@
                     
                         {{!-- look in routes/view-routes.js for the data --}}
                         {{!-- anchors partial is in views/partials/anchor.handlebars --}}
-                            {{#if user}}
-                            {{#with loggedIn}}
+                            {{#if data.user}}
+                            {{#with data.loggedIn}}
                             {{> anchor}}
                             {{/with}}
                             {{else}}
-                            {{#with loggedOut}}
+                            {{#with data.loggedOut}}
                             {{> anchor}}
                             {{/with}}
                             {{/if}}
