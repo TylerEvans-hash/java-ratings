@@ -29,6 +29,3 @@ async function signupFormHandler(event) {
 }
 
 document.querySelector('.signup-form-btn').addEventListener('click', signupFormHandler);
-
-// const url = window.location.origin;
-// console.log(url);

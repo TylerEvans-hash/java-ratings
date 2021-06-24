@@ -1,6 +1,3 @@
-// Tim - I think this is where the upload logic should live.
-// When a Post is created the image file should be passed in to the image file, inside the Create Post method
-
 const router = require('express').Router();
 const { Post } = require('../../models');
 
