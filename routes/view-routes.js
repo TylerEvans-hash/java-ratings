@@ -54,15 +54,19 @@ router.get('/', (req, res) => {
                 {
                     buttonA: 'login',
                     textA: '🗝 Login',
+                    A: 'login',
                     buttonB: 'signup',
                     textB: 'Sign Up',
+                    B: 'signup'
                 },
                 loggedIn:
                 {
                     buttonA: 'logout',
                     textA: 'Log Out',
+                    A: 'logout',
                     buttonB: 'createPost',
                     textB: 'Create Post',
+                    B: 'createPost'
                 }
             }
             res.render('home', {data, posts})
