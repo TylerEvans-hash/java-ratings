@@ -34,10 +34,10 @@ router.get('/:id', (req, res) => {
 // Create Post
 router.post('/', (req, res) => {
     Post.create({
-        name: req.body.title,
+        title: req.body.title,
         description: req.body.description,
-        file: req.body.photo,
-        authorId: req.body.authorId
+        file: req.body.file,
+        author_id: req.session.user_id
     })
         .then(dbPostData => res.json(dbPostData))
         .catch(err => {
