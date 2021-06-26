@@ -1,24 +1,34 @@
 {{!-- Create a Post form --}}
 <div class="container">
-  <form class="post-form" id="form">
-    <h1>New Post</h1>
-    <p> Post Title: <input type="text" name="post-title" id="title"></p>
-    <p> Coffee Review: <input type="text" name="description" id="review" class="textbox"></p>
+  <form class="post-form" action="/api/posts/" method="POST" enctype="multipart/form-data" id="uploadForm" name="uploadForm">
 
-    <p>{{msg}}</p>
-    <form action="/upload" method="POST" enctype="multipart/form-data">
-      Upload Your Photo: <div class="file-field input-field">
-        <div class="btn">
-          <span>File</span>
-          <input name="image" type="file" id="image">
-        </div>
-        <div class="file-path-wrapper">
-          <input class="file-path validate" type="text">
-        </div>
-      </div>
-      <br>
-      <button type="submit" class="post-form-btn"> ☕ Submit </button>
-    </form>
-    <a href="/" class="home-link"> JAVA RATINGS ☕ </a>
+    <h1>New Post</h1>
+
+    <div>
+      <label for="post-title"> Post Title: </label>
+      <input type="text" name="post-title" id="post-title">
+    </div>
+
+    <div>
+      <label for="post-description"> Coffee Review: </label>
+      <input type="text" name="post-description" id="post-description" class="textbox">
+    </div>
+
+    <p> Upload Your Photo: </p>
+
+    <div class="file-field input-field">
+      <label for="image"> File: </label>
+      <input type="file" name="image" id="image">
+    </div>
+
+    <br>
+    
+    <input type="submit" value="☕ Submit" class="post-form-btn">
+
+  </form>
+
+  <a href="/" class="home-link"> JAVA RATINGS ☕ </a>
 </div>
+
+
 <script src="/js/post.js"></script>

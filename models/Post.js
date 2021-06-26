@@ -22,7 +22,7 @@ Post.init(
         },
         file: {
             type: DataTypes.STRING,
-            allowNull: true
+            allowNull: false
         },
         author_id: {
             type: DataTypes.INTEGER,
