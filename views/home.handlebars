@@ -1,0 +1,31 @@
+{{!-- the header is located at views/partials/header.handlebars --}}
+{{> header}}
+
+<main>
+    <!-- Site Description -->
+    <section class="about">
+        <h4>
+            Friends don't let friends drink a bad cup of coffee.
+        </h4>
+        <p>👍 Have a great cup of coffee? Tell us.</p>
+        <p>👎 Is there a cup of coffee we should avoid? Please tell us.</p>
+        <p>☕ Have a perfect cappuccino? Show us.</p>
+    </section>
+
+    {{!-- the post is located at views/partials/post.handlebars --}}
+    <div class="card-columns d-flex justify-content-center">
+        <div class="row">
+
+            {{#each posts}}
+
+            {{> card}}
+            {{/each}}
+
+        </div>
+    </div>
+
+</main>
+
+{{!-- the footer is located at views/partials/footer.handlebars --}}
+<script src="/js/logout.js"></script>
+{{> footer}}

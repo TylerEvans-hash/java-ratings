@@ -1,0 +1,38 @@
+{{!-- could be refactored? #each needs to refrence an array and the loggedIn and loggedOut objects are different.
+It may be possible to name an array identically within the different objects to have them overwrite eachother --}}
+
+{{!-- this is the same --}}
+<div class="row">
+    <div class="col-md p-3">
+        <a href="/{{buttonA}}" class="nav-btn" id="{{A}}">{{textA}}</a>
+    </div>
+{{!-- END --}}
+
+{{!-- as this --}}
+    <div class="row">
+        <div class="col-md p-3">
+            <a href="/{{buttonB}}" class="nav-btn" id="{{B}}">{{textB}}</a>
+        </div>
+{{!-- END --}}
+
+{{!-- which makes me think it could rewritten to be there once --}}
+
+{{!-- this is whats blocking me --}}
+    </div>
+</div>
+
+{{!-- if it weren't for the closing div that nests them inside eachother I wouldn't have stopped trying. 
+although it could be possible to have another #each around one /div
+I imagine it would look like is below minus ! to comment out certain parts--}}
+
+
+{{!-- {{#each array}}
+    <div class="row">
+        <div class="col-md p-3">
+            <a href="/{{button}}" class="nav-btn">{{!text}}</a>
+        </div>
+{{!/each}} 
+
+{{!#each array}}
+</div>
+{{!/each}} --}}

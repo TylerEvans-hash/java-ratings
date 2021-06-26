@@ -1,0 +1,24 @@
+{{!-- Create a Post form --}}
+<div class="container">
+  <form class="post-form" id="form">
+    <h1>New Post</h1>
+    <p> Post Title: <input type="text" name="post-title" id="title"></p>
+    <p> Coffee Review: <input type="text" name="description" id="review" class="textbox"></p>
+
+    <p>{{msg}}</p>
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+      Upload Your Photo: <div class="file-field input-field">
+        <div class="btn">
+          <span>File</span>
+          <input name="image" type="file" id="image">
+        </div>
+        <div class="file-path-wrapper">
+          <input class="file-path validate" type="text">
+        </div>
+      </div>
+      <br>
+      <button type="submit" class="post-form-btn"> ☕ Submit </button>
+    </form>
+    <a href="/" class="home-link"> JAVA RATINGS ☕ </a>
+</div>
+<script src="/js/post.js"></script>
