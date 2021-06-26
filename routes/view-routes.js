@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Post } = require('../models');
+const { Post, User } = require('../models');
 
 // cardData: [
 //     {
@@ -25,9 +25,12 @@ const { Post } = require('../models');
 //     }
 
 router.get('/', (req, res) => {
-    Post.findAll()
+    Post.findAll({
+        include: User
+    })
         .then(dbPostData => {
             const posts = dbPostData.map(post => post.get({ plain: true }));
+            console.log(posts);
             const data = {
                 dev: [
                     {

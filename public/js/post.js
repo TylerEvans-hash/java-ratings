@@ -3,15 +3,15 @@ async function newFormHandler(event) {
 
     const title = document.querySelector('#title').value;
     const description = document.querySelector('#review').value;
-    const photo = document.querySelector('#image').value;
+    const file = document.querySelector('#image').value;
 
-    if (title && description && photo) {
+    if (title && description && file) {
         const response = await fetch(`/api/posts/`, {
             method: 'post',
             body: JSON.stringify({
                 title,
                 description,
-                photo
+                file,
             }),
             headers: { 'Content-Type': 'application/json' }
         });

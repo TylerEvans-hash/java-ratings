@@ -22,8 +22,7 @@ Java Ratings is empowering Coffee Connoisseurs around the world to impart their 
 
 [GitHub] https://github.com/TylerEvans-hash/java-ratings.git
 [Screenshot] <img src="./public/assets/img/screenshot.JPG" alt="yellow coffee cup Java Ratings Header">
-
-[Heroku]
+[Heroku] https://java-ratings-poject-2.herokuapp.com/
 
 ## Contributors
 
@@ -33,4 +32,7 @@ Java Ratings is empowering Coffee Connoisseurs around the world to impart their 
 - Tim Gelety @Tim-Gelety
 - Natasha Harrison @natasharrison
 
-## Future Development / Bugs
+## Future Development 
+- Add Coffee Table with drop down menu options for the User to select Roast, Origin, Type, etc. 
+- Implement search option to filter posts based on the options listed above 
+- Add imbeded Google maps to allow user to post the location of the coffee shop
