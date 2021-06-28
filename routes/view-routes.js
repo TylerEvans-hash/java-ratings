@@ -30,11 +30,11 @@ router.get('/', (req, res) => {
             'id',
             'title',
             'description',
-            'file',
-            [
-                sequelize.literal('(SELECT COUNT(*) FROM like WHERE post.id = like.post_id)'),
-                'like_count'
-            ]
+            // 'file',
+            // [
+            //     sequelize.literal('(SELECT COUNT(*) FROM like WHERE post.id = like.post_id)'),
+            //     'like_count'
+            // ]
         ],
         include: User
     })
