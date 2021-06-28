@@ -58,6 +58,19 @@ router.post('/',upload.single('image'), (req, res) => {
         });
 });
 
+router.put('/like', (req, res) => {
+    // make sure the session exists first
+    if (req.session) {
+        // pass session id along with all destructured properties on req.body
+        Post.like({ ...req.body, user_id: req.session.user_id }, { Like, User })
+            .then(updatedLikeData => res.json(updatedLikeData)) 
+            .catch(err => {
+                console.log(err);
+                res.status(500).json(err);
+            });
+    }
+});
+
 // Update Post
 router.put('/:id', (req, res) => {
     Post.update(req.body, {
