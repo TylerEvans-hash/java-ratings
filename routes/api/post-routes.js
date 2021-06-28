@@ -1,5 +1,17 @@
 const router = require('express').Router();
 const { Post } = require('../../models');
+const multer = require('multer');
+
+const fileStorageEngine = multer.diskStorage({
+    destination: (req, file, cb) => {
+        cb(null, './public/assets/img/user-images')
+    },
+    filename: (req, file, cb) => {
+        cb(null, Date.now() + '--' + file.originalname)
+    }
+});
+
+const upload = multer({ storage: fileStorageEngine });
 
 // Get ALL posts
 router.get('/', (req, res) => {
@@ -32,18 +44,31 @@ router.get('/:id', (req, res) => {
 });
 
 // Create Post
-router.post('/', (req, res) => {
+router.post('/',upload.single('image'), (req, res) => {
     Post.create({
-        name: req.body.title,
+        title: req.body.title,
         description: req.body.description,
-        file: req.body.photo,
-        authorId: req.body.authorId
+        file: req.file.filename,
+        author_id: req.session.user_id
     })
         .then(dbPostData => res.json(dbPostData))
         .catch(err => {
             console.log(err);
             res.status(500).json(err);
         });
+});
+
+router.put('/like', (req, res) => {
+    // make sure the session exists first
+    if (req.session) {
+        // pass session id along with all destructured properties on req.body
+        Post.like({ ...req.body, user_id: req.session.user_id }, { Like, User })
+            .then(updatedLikeData => res.json(updatedLikeData)) 
+            .catch(err => {
+                console.log(err);
+                res.status(500).json(err);
+            });
+    }
 });
 
 // Update Post

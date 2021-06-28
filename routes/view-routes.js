@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Post } = require('../models');
+const { Post, User, Like } = require('../models');
 
 // cardData: [
 //     {
@@ -25,9 +25,22 @@ const { Post } = require('../models');
 //     }
 
 router.get('/', (req, res) => {
-    Post.findAll()
+    Post.findAll({
+        attributes: [
+            'id',
+            'title',
+            'description',
+            'file',
+            [
+                sequelize.literal('(SELECT COUNT(*) FROM like WHERE post.id = like.post_id)'),
+                'like_count'
+            ]
+        ],
+        include: User
+    })
         .then(dbPostData => {
             const posts = dbPostData.map(post => post.get({ plain: true }));
+            console.log(posts);
             const data = {
                 dev: [
                     {
@@ -83,6 +96,10 @@ router.get('/login', (req, res) => {
         return;
     }
     res.render('login');
+});
+
+router.get('/logout', (req, res) => {
+    res.redirect('/');
 });
 
 router.get('/signup', (req, res) => {
