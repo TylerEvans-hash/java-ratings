@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { Post, User, Like } = require('../models');
+const sequelize = require('sequelize');
 
 // cardData: [
 //     {
@@ -36,7 +37,7 @@ router.get('/', (req, res) => {
                 'like_count'
             ]
         ],
-        include: User
+        include: [User, Like]
     })
         .then(dbPostData => {
             const posts = dbPostData.map(post => post.get({ plain: true }));

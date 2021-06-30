@@ -1,6 +1,7 @@
 const router = require('express').Router();
-const { Post } = require('../../models');
+const { Post, Like } = require('../../models');
 const multer = require('multer');
+
 
 const fileStorageEngine = multer.diskStorage({
     destination: (req, file, cb) => {
