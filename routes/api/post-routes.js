@@ -1,6 +1,7 @@
 const router = require('express').Router();
-const { Post } = require('../../models');
+const { Post, Vote, User } = require('../../models');
 const multer = require('multer');
+
 
 const fileStorageEngine = multer.diskStorage({
     destination: (req, file, cb) => {
@@ -62,7 +63,7 @@ router.put('/like', (req, res) => {
     // make sure the session exists first
     if (req.session) {
         // pass session id along with all destructured properties on req.body
-        Post.like({ ...req.body, user_id: req.session.user_id }, { Like, User })
+        Post.upvote({ ...req.body, user_id: req.session.user_id }, { Vote, User })
             .then(updatedLikeData => res.json(updatedLikeData)) 
             .catch(err => {
                 console.log(err);
