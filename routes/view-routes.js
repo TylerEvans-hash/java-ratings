@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Post, User, Like } = require('../models');
+const { Post, User, Vote } = require('../models');
 const sequelize = require('sequelize');
 
 // cardData: [
@@ -33,11 +33,11 @@ router.get('/', (req, res) => {
             'description',
             'file',
             [
-                sequelize.literal('(SELECT COUNT(*) FROM like WHERE post.id = like.post_id)'),
-                'like_count'
+                sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'),
+                'vote_count'
             ]
         ],
-        include: [User, Like]
+        include: [User, Vote]
     })
         .then(dbPostData => {
             const posts = dbPostData.map(post => post.get({ plain: true }));
